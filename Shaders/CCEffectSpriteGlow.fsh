@@ -8,7 +8,7 @@ varying vec2 v_TexCoord;
 
 void main()
 {
-	/**/
+    /**/
     vec4 finalColor = vec4(0.0, 0.0, 0.0, 0.0);
     
     finalColor += texture2D(CC_Texture0, v_TexCoord - u_BlurDis * 4.0) * 0.05;
@@ -22,12 +22,12 @@ void main()
     finalColor += texture2D(CC_Texture0, v_TexCoord + u_BlurDis * 4.0) * 0.05;
 
     if (u_BlurDis[1] == 0.0) {
-		gl_FragColor = v_Color * finalColor;
-	} else {
-		vec4 originColor = texture2D(CC_Texture0, v_TexCoord);
-		vec4 blurColor = v_Color * finalColor;
-		vec4 glowColor = blurColor * 0.5;
-		glowColor.a = glowColor.a * 0.1;
-		gl_FragColor = glowColor + (1.0 - glowColor.a) * originColor;
-	}
+        gl_FragColor = v_Color * finalColor;
+    } else {
+        vec4 originColor = texture2D(CC_Texture0, v_TexCoord);
+        vec4 blurColor = v_Color * finalColor;
+        vec4 glowColor = blurColor * 0.5;
+        glowColor.a = glowColor.a * 0.1;
+        gl_FragColor = glowColor + (1.0 - glowColor.a) * originColor;
+    }
 }

@@ -7,7 +7,7 @@ varying vec2 v_TexCoord;
 
 void main()
 {
-	gl_Position = CC_MVPMatrix * a_position;
+    gl_Position = CC_MVPMatrix * a_position;
 
     v_Color = a_color;
 

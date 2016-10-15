@@ -19,11 +19,11 @@ enum EffectSpriteMode
     kNormal,
     kSimpleBlur,
     kGaussianBlur,
-	kTreeSimpleBlur,
-	kStroke,
-	kGlow,
-	kFloatingGlow,
-	kTemplate,
+    kTreeSimpleBlur,
+    kStroke,
+    kGlow,
+    kFloatingGlow,
+    kTemplate,
 };
 
 // uniform location index
@@ -32,7 +32,7 @@ enum UniformLocationIndex
     kUniformSampler1,
     kUniformSampler2,
     kUniformBlurDis,
-	kUniformStrokeColor,
+    kUniformStrokeColor,
     
     UniformIndexNum
 };
@@ -54,39 +54,39 @@ public:
     virtual bool init();
     
     void setMode(EffectSpriteMode mode);
-	void setTemplateType(TemplateType type);
+    void setTemplateType(TemplateType type);
     
     void setTexture1(CCTexture2D *tex);
     void setTexture2(CCTexture2D *tex);
 
-	void setStrokeColor(ccColor3B strokeColor);
+    void setStrokeColor(ccColor3B strokeColor);
 private:
-	void visitTreeSimpleBlur();
-	void visitGlow();
+    void visitTreeSimpleBlur();
+    void visitGlow();
 
     void drawSimpleBlur();
     void drawGaussianBlur();
-	void drawFloatingGlow();
+    void drawFloatingGlow();
     
-	virtual void visit();
+    virtual void visit();
     virtual void draw();
-	void spriteDraw();
+    void spriteDraw();
 
 private:
-	EffectSpriteMode _mode;
+    EffectSpriteMode _mode;
     
     CCTexture2D *_texture1;
     CCTexture2D *_texture2;
     
     GLint _uniforms[UniformIndexNum];
     
-	GLuint _framebuffer;
-	GLuint _texture;
+    GLuint _framebuffer;
+    GLuint _texture;
 
-	CCSize _screenBufferSize;
-	float _pixelSpan;
+    CCSize _screenBufferSize;
+    float _pixelSpan;
 
-	ccColor3B _strokeColor;
+    ccColor3B _strokeColor;
 };
 
 #endif /* defined(___dxOpenGLES2__CCEffectSprite__) */

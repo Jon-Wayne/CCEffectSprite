@@ -8,7 +8,7 @@ varying vec2 v_TexCoord;
 
 void main()
 {
-	/**/
+    /**/
     vec4 finalColor = vec4(0.0, 0.0, 0.0, 0.0);
     
     finalColor += texture2D(CC_Texture0, v_TexCoord - u_BlurDis * 4.0) * 0.05;
@@ -20,8 +20,8 @@ void main()
     finalColor += texture2D(CC_Texture0, v_TexCoord + u_BlurDis * 2.0) * 0.12;
     finalColor += texture2D(CC_Texture0, v_TexCoord + u_BlurDis * 3.0) * 0.09;
     finalColor += texture2D(CC_Texture0, v_TexCoord + u_BlurDis * 4.0) * 0.05;
-	
+    
     
     gl_FragColor = v_Color * finalColor;
-	// gl_FragColor = texture2D(CC_Texture0, v_TexCoord);
+    // gl_FragColor = texture2D(CC_Texture0, v_TexCoord);
 }

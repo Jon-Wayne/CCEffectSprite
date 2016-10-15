@@ -24,6 +24,6 @@ void main()
     finalColor += currColor;
     finalColor /= 9.0;
     
-	vec4 strokeColor = vec4(u_StrokeColor.r*finalColor.a, u_StrokeColor.g*finalColor.a, u_StrokeColor.b*finalColor.a, finalColor.a);
-	gl_FragColor = currColor + strokeColor  * (1.0 - currColor.a);
+    vec4 strokeColor = vec4(u_StrokeColor.r*finalColor.a, u_StrokeColor.g*finalColor.a, u_StrokeColor.b*finalColor.a, finalColor.a);
+    gl_FragColor = currColor + strokeColor  * (1.0 - currColor.a);
 }
